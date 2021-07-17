@@ -1,3 +1,1 @@
 # Quicksort
-
-## Question
