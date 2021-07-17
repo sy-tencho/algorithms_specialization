@@ -48,7 +48,7 @@ def partition(arr, l, r):  # l, r: 各ルーティン内の探索範囲
 
     for j in range(l+1, r+1):
         if arr[j] < p:
-            arr[j], arr[i] = arr[i], arr[j]
+            swap(arr, j, i)
             i += 1
 
     swap(arr, arr.index(p), i-1)
