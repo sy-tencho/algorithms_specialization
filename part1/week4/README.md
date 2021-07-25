@@ -1,4 +1,4 @@
-# Karger min cut
+# Karger's min cut
 
 # Q
 
