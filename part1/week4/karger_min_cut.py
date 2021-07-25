@@ -6,7 +6,7 @@ import gdown
 
 
 def randomize(graph):
-    # 本来2つ目のnodeは一つ目のnodeとは独立して選択されるべき
+    # 本来2つ目のnodeは1つ目のnodeとは独立して選択されるべき
     key = random.choice(list(graph.keys()))
     value = random.choice(graph[key])
 
