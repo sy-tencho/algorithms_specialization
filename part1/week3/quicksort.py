@@ -1,4 +1,3 @@
-# Runs on Google Colab
 import gdown
 import sys
 

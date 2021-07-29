@@ -1,4 +1,3 @@
-# Runs on Google Colab
 import copy
 import sys
 import random
