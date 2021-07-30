@@ -1,5 +1,6 @@
 import gdown
 import sys
+from heapq import heappush, heappop
 
 
 def main():
@@ -41,6 +42,25 @@ def dijkstra(G):
 
             if G[k] == []:
                 del G[k]
+
+
+def dijkstra_with_heap(G):
+    dist = [sys.maxsize] * (len(G.keys()) + 1)
+    dist[1] = 0
+    q = [(0, 1)]
+
+    while q:
+        dist_v, v = heappop(q)
+
+        if dist[v] < dist_v:
+            continue
+
+        for w, dist_w in G[v]:
+            if dist_v + dist_w < dist[w]:
+                dist[w] = dist_v + dist_w
+                heappush(q, (dist[w], w))
+
+    return dist
 
 
 if __name__ == '__main__':
