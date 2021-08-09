@@ -1,6 +1,16 @@
 # Runs on Google Colab
 import gdown
 
+url = 'url to file'
+input = 'file.txt'
+gdown.download(url, input, quiet=False)
+
+f = open('file.txt', 'r')
+F = [int(l) for l in f.readlines()]
+
+ans = median_maintenance(F)
+print(sum(ans) % 10_000)
+
 
 def heap_min_push(q, x):
     if q == []:
@@ -138,7 +148,7 @@ def bubble_down_max(q, i):
     return q
 
 
-def median_maintainance(numbers):
+def median_maintenance(numbers):
     L, R = [], []
     ans = []
 
@@ -178,14 +188,3 @@ def median_maintainance(numbers):
         ans.append(L[1])
 
     return ans
-
-
-url = 'url to file'
-input = 'file.txt'
-gdown.download(url, input, quiet=False)
-
-f = open('file.txt', 'r')
-F = [int(l) for l in f.readlines()]
-
-ans = median_maintainance(F)
-print(sum(ans) % 10_000)
