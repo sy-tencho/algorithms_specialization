@@ -31,19 +31,19 @@ while len(heap) >= 2:
 lengths = []
 
 
-def count_max(tree, counter):
+def count(tree, counter):
     if tree.left is None and tree.right is None:
         lengths.append(counter)
 
     if tree.left:
-        count_max(tree.left, counter + 1)
+        count(tree.left, counter + 1)
 
     if tree.right:
-        count_max(tree.right, counter + 1)
+        count(tree.right, counter + 1)
 
 
 _, ans_tree = heapq.heappop(heap)
-count_max(ans_tree, 0)
+count(ans_tree, 0)
 
 lengths = sorted(lengths)
 print(lengths[0], lengths[-1])
